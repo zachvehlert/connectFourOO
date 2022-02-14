@@ -69,7 +69,7 @@ function findSpotForCol (x) {
 function placeInTable (y, x) {
 	const piece = document.createElement('div');
 	piece.classList.add('piece');
-	piece.classList.add(`p${currPlayer}`);
+	piece.style.backgroundColor(this.currPlayer.color);
 	piece.style.top = -50 * (y + 2);
 
 	const spot = document.getElementById(`${y}-${x}`);
@@ -109,7 +109,7 @@ function handleClick (evt) {
 	}
 
 	// switch players
-	currPlayer = currPlayer === 1 ? 2 : 1;
+	currPlayer = currPlayer === player ? 2 : 1;
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
